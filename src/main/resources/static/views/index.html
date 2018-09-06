@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Main Page</title>
+</head>
+<body ng-app="employee">
+	<hr />
+	<div class="container" ng-controller="EmployeeController">
+		<div class="row">
+			<label>First Name</label>  <input type="text" ng-model="employeeDto.firstName" class="input-sm spacing" />
+			<label>Last Name</label>  <input type="text" ng-model="employeeDto.lastName" class="input-sm spacing" />
+			<label>Age</label>  <input type="text" ng-model="employeeDto.age" class="input-sm spacing" />
+			<label>Gender</label>  <input type="text" ng-model="employeeDto.gender" class="input-sm spacing" />
+			<label>Email</label>  <input type="text" ng-model="employeeDto.email" class="input-sm spacing" />
+			 
+			<button ng-click="saveEmployee()" class="btn btn-sm btn-info">Save Employee</button>
+		</div>
+		<hr />
+		<div class="row">
+			<p>{{allEmployees | json}}</p>
+		</div>
+		<hr />
+		
+		<div class="row">
+			<label>Employee Id</label>  <input type="text" ng-model="employeeDto.empId" class="input-sm spacing" />
+			 
+			<button ng-click="getEmployeeById()" class="btn btn-sm btn-info">Get Employee By ID</button>
+		</div>
+		
+		<div class="row">
+			<p>{{employeeData | json}}</p>
+		</div>
+		<hr />
+		
+		<div class="row">
+			<label>Employee Id</label>  <input type="text" ng-model="employeeDto.empId" class="input-sm spacing" />
+			 
+			<button ng-click="removeEmployee()" class="btn btn-sm btn-info">Remove Employee With ID</button>
+		</div>
+		
+		<div class="row">
+			<p>{{response}}</p>
+		</div>
+		<hr />
+		
+	</div>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.2/angular.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.5.0/ui-bootstrap-tpls.min.js"></script>
+<script src="scripts/app/app.js"></script>
+<script src="scripts/app/EmployeeController.js"></script>
+<script src="scripts/app/EmployeeService.js"></script>
+<!-- <link rel="stylesheet" href="css/lib/bootstrap.min.css" />
+<link rel="stylesheet" href="css/app/app.css" /> -->
+</html>
